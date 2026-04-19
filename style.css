@@ -223,3 +223,47 @@ footer {
     padding: 15px;
   }
 }
+
+
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  overflow-x: hidden;
+  background: radial-gradient(circle at top, #1a001f, #000);
+}
+
+/* SECCIONES FLUIDAS */
+.scene {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(20px, 5vw, 80px);
+}
+
+/* TIPOGRAFÍA RESPONSIVE */
+h1 {
+  font-size: clamp(2rem, 5vw, 6rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+/* FORM RESPONSIVE */
+.form-card {
+  width: min(90%, 420px);
+}
+
+/* MÓVIL EXTREMO */
+@media (max-width: 400px) {
+  .socials {
+    display: none;
+  }
+}
