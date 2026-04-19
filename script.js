@@ -1,82 +1,87 @@
-gsap.registerPlugin(ScrollTrigger);
-
-/* SCROLL STORY */
-gsap.utils.toArray(".reveal").forEach(el => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 80%",
-      scrub: true
-    },
-    y: 100,
-    opacity: 0
-  });
-});
-
-/* TYPEWRITER */
-const el = document.querySelector(".type");
-const text = el.innerText;
-el.innerText = "";
-
-let i = 0;
-function type() {
-  if (i < text.length) {
-    el.innerHTML += text[i];
-    i++;
-    setTimeout(type, 50);
-  }
-}
-type();
-
-/* SCROLL CONTACT */
-function goContact(){
-  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+* {
+  box-sizing: border-box;
 }
 
-/* FORM */
-document.getElementById("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  window.open("https://wa.me/34600000000", "_blank");
-});
-
-/* -------------------------------
-   🎧 PARTICLES (TESLA STYLE LIGHT)
---------------------------------*/
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let particles = [];
-
-for (let i = 0; i < 80; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2,
-    dx: (Math.random() - 0.5),
-    dy: (Math.random() - 0.5)
-  });
+body {
+  margin: 0;
+  font-family: Arial;
+  background: black;
+  color: white;
+  overflow-x: hidden;
 }
 
-function animate() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-    ctx.fillStyle = "white";
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
+/* PARTICLES CANVAS */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-animate();
+/* NAV */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* SCENES */
+.scene {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.dark {
+  background: #050505;
+}
+
+/* TYPE */
+.type {
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+/* INPUT */
+input, textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 300px;
+  background: #111;
+  border: none;
+  color: white;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* FOOTER COPY */
+.copy {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+}
