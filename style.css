@@ -184,3 +184,42 @@ footer {
     opacity: 1;
   }
 }
+@media (max-width: 768px) {
+
+  .scene {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .form-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .form-card input,
+  .form-card textarea {
+    width: 100%;
+  }
+
+  .form-card button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .form-card {
+    padding: 15px;
+  }
+}
