@@ -1,49 +1,49 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// HERO animación entrada
-gsap.from("#title1", {
-  y: 100,
+/* HERO */
+gsap.from(["#title1", "#title2", "#subtitle"], {
+  y: 80,
   opacity: 0,
-  duration: 1
+  duration: 1.2,
+  stagger: 0.2,
+  ease: "power3.out"
 });
 
-gsap.from("#title2", {
-  y: 100,
-  opacity: 0,
-  duration: 1,
-  delay: 0.3
-});
-
-gsap.from("#subtitle", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
-  delay: 0.6
-});
-
-// SCROLL CINEMÁTICO
+/* SCROLL */
 gsap.utils.toArray(".animate").forEach(el => {
   gsap.from(el, {
     scrollTrigger: {
       trigger: el,
-      start: "top 80%",
-      scrub: 1
+      start: "top 85%",
+      toggleActions: "play none none reverse"
     },
-    y: 150,
-    opacity: 0
+    y: 120,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out"
   });
 });
 
-// CONTACTO
+/* CONTACT */
 function goContact(){
-  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("contact").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
-// FORM + CONVERSIÓN
+/* FORM */
 document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
 
-  alert("Te contactamos en breve 🚀");
+  const btn = this.querySelector("button");
 
-  window.open("https://wa.me/34600000000", "_blank");
+  btn.innerText = "Enviando...";
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.innerText = "Solicitar acceso";
+    btn.disabled = false;
+
+    window.open("https://wa.me/34600000000", "_blank");
+  }, 800);
 });
