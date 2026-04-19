@@ -97,3 +97,90 @@ footer {
   justify-content: center;
   gap: 20px;
 }
+
+
+/* CONTENEDOR CENTRADO */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TARJETA GLASS */
+.form-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 79, 216, 0.3);
+  box-shadow: 0 0 40px rgba(122, 92, 255, 0.15);
+
+  text-align: center;
+
+  /* animación entrada */
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* TITULO */
+.form-card h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+/* TEXTO */
+.form-card p {
+  color: #bbb;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* INPUTS */
+.form-card input,
+.form-card textarea {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 79, 216, 0.4);
+  background: rgba(10, 0, 20, 0.6);
+  color: white;
+  outline: none;
+  text-align: center;
+}
+
+/* BOTÓN */
+.form-card button {
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+
+  background: linear-gradient(45deg, #ff4fd8, #7a5cff);
+  color: white;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.form-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 79, 216, 0.4);
+}
+
+/* ANIMACIÓN ENTRADA */
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
