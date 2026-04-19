@@ -21,6 +21,16 @@ gsap.utils.toArray(".reveal").forEach(el => {
   });
 });
 
+gsap.from(".form-card", {
+  scrollTrigger: {
+    trigger: ".form-card",
+    start: "top 80%"
+  },
+  y: 60,
+  opacity: 0,
+  duration: 1
+});
+
 /* CTA SCROLL */
 function goContact(){
   document.getElementById("contact").scrollIntoView({
