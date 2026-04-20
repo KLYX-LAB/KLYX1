@@ -349,3 +349,30 @@ p {
     font-size: 1rem;
   }
 }
+.footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+.social {
+  margin-top: 15px;
+}
+
+.social a {
+  margin: 0 12px;
+  text-decoration: none;
+}
+
+.social i {
+  font-size: 24px;
+  color: white;
+  transition: 0.3s;
+}
+
+.social i:hover {
+  color: #2563eb;
+  transform: scale(1.2);
+}
